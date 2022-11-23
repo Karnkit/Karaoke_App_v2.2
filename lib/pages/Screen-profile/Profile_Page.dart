@@ -29,7 +29,7 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
           child: Column(
             children: [
-              SizedBox(height: 100),
+              SizedBox(height: 120),
               ProfileWidget(
                 imagePath: widget.userData[0]['img'],
                 onClicked: () {
@@ -38,7 +38,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   );
                 },
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 40),
               Text(
                 widget.userData[0]['userName'],
                 style: TextStyle(color: Colors.white, fontSize: 22),
@@ -48,11 +48,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 widget.userData[0]['userEmail'],
                 style: TextStyle(color: Colors.green, fontSize: 16),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 25),
               buildNumber(),
-              SizedBox(height: 20),
-              buildAbout(),
-              SizedBox(height: 15),
+              SizedBox(height: 25),
               getList()
             ],
           ),
@@ -88,27 +86,6 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget buildAbout() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'About',
-            style: TextStyle(fontSize: 24, color: Colors.white),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            'KMUTNB',
-            style: TextStyle(fontSize: 12, color: Colors.white),
-            textAlign: TextAlign.center,
-          ),
-        ],
       ),
     );
   }
