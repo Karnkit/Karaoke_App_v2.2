@@ -48,6 +48,7 @@ dependencies:
   alert: ^2.0.1
   anim_search_bar: ^2.0.2
   file_picker: ^5.2.2
+  loading_animation_widget: ^1.2.0+3
 
 dev_dependencies:
   flutter_test:
