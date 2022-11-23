@@ -38,7 +38,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: Text('EditProfile'),
+          title: Text(
+            "Edit Profile",
+            style: TextStyle(
+                fontSize: 20, color: Colors.green, fontWeight: FontWeight.bold),
+          ),
           leading: BackButton(),
           backgroundColor: Colors.transparent,
           elevation: 0,

@@ -73,7 +73,7 @@ class _ProfilePageState extends State<ProfilePage> {
               "Profile",
               style: TextStyle(
                   fontSize: 20,
-                  color: Colors.white,
+                  color: Colors.green,
                   fontWeight: FontWeight.bold),
             ),
             IconButton(
