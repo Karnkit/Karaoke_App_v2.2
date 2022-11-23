@@ -51,7 +51,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
             child: Column(
               children: [
-                const SizedBox(height: 100),
+                const SizedBox(height: 120),
                 if (pickedFile == null)
                   Container(
                     child: noImage(),
@@ -118,7 +118,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget uploadFileBtn() {
     return ElevatedButton(
       child: Text('Upload Image'),
-      onPressed: (){},
+      onPressed: () {},
     );
   }
 
