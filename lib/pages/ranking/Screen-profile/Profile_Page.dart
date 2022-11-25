@@ -15,40 +15,99 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: Colors.black,
-      appBar: getAppBar(),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-          child: Column(
-            children: [
-              SizedBox(height: 120),
-              ProfileWidget(
-                imagePath: widget.userData[0]['img'],
-                onClicked: () {},
-              ),
-              SizedBox(height: 40),
-              Text(
-                widget.userData[0]['userName'],
-                style: TextStyle(color: Colors.white, fontSize: 22),
-              ),
-              SizedBox(height: 5),
-              Text(
-                widget.userData[0]['userEmail'],
-                style: TextStyle(color: Colors.green, fontSize: 16),
-              ),
-              SizedBox(height: 25),
-              buildNumber(),
-              SizedBox(height: 25),
-              getList()
-            ],
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        extendBodyBehindAppBar: true,
+        backgroundColor: Colors.black,
+        appBar: getAppBar(),
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+            child: Column(
+              children: [
+                SizedBox(height: 120),
+                ProfileWidget(
+                  imagePath: widget.userData[0]['img'],
+                  onClicked: () {},
+                ),
+                SizedBox(height: 40),
+                Text(
+                  widget.userData[0]['userName'],
+                  style: TextStyle(color: Colors.white, fontSize: 22),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  widget.userData[0]['userEmail'],
+                  style: TextStyle(color: Colors.green, fontSize: 16),
+                ),
+                SizedBox(height: 25),
+                buildNumber(),
+                SizedBox(height: 25),
+                tabBar(),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget tabBar() {
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            child: TabBar(
+              indicatorColor: Colors.green,
+              isScrollable: true,
+              tabs: [
+                Tab(text: 'Last Singing'),
+                Tab(text: 'Most Score'),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 300,
+            child: TabBarView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      "data 1",
+                      style: TextStyle(color: Colors.green, fontSize: 16),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      'data2',
+                      style: TextStyle(color: Colors.green, fontSize: 16),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
